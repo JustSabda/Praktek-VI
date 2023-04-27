@@ -39,6 +39,9 @@ public class PlayerController : NetworkBehaviour
     private Vector3 _input;
     private Rigidbody _rb;
 
+
+   
+
     private void Awake()
     {
         Instance = this;
@@ -51,21 +54,26 @@ public class PlayerController : NetworkBehaviour
 
         charging = false;
         tiredLife = false;
+       
+
     }
 
     private void Start()
     {
-        if(IsOwner && IsClient)
-        {
-            Debug.Log(CameraFollow.Instance);
-            CameraFollow.Instance.player = this.transform;
-        }
 
 
     }
 
     private void Update()
     {
+
+        if (IsOwner)
+        {
+            //Debug.Log(CameraFollow.Instance);
+            CameraFollow.Instance.player = this.transform;
+
+        }
+
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         meeple = transform.Find("GO_Char_Telur_Basic_001");
@@ -111,8 +119,11 @@ public class PlayerController : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
-        HandleRotation();
+        if (IsOwner)
+        {
+            HandleMovement();
+            HandleRotation();
+        }
     }
 
 

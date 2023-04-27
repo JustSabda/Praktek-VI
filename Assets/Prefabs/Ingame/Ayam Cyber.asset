@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Angga Balon
   icon: {fileID: 21300000, guid: 75acb2a31be46e04c8687e6893893f4d, type: 3}
   introPrefab: {fileID: 640176315809310251, guid: 650c608dbcca9a34998c01652e35bc51, type: 3}
-  gameplayPrefab: {fileID: 20759430662763960, guid: b0a34febfc1cf8e41b27a25eab971d5e, type: 3}
+  gameplayPrefab: {fileID: 20759430662763960, guid: 3ea8446acee05be4191c798de92fc0fc, type: 3}

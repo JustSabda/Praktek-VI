@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ public class ServerManager : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private string characterSelectSceneName = "CharacterSelect";
-    [SerializeField] private string gameplaySceneName = "Gameplay";
+    public string map;
 
     public static ServerManager Instance { get; private set; }
 
@@ -95,6 +96,14 @@ public class ServerManager : MonoBehaviour
     {
         gameHasStarted = true;
 
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
+        if(map != "random")
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene(map, LoadSceneMode.Single);
+        }
+        
+
+
     }
+
+    
 }
