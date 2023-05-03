@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ayam Army
   m_EditorClassIdentifier: 
   id: 2
-  displayName: Fariz Pohon
-  icon: {fileID: 21300000, guid: 81a26dad52a33d44db38d191f7a1b6a0, type: 3}
+  displayName: Barjo si Veteran
+  icon: {fileID: 21300000, guid: 7d061ccf3d93adf448a0edaff27ddf7e, type: 3}
   introPrefab: {fileID: 1503185379374636055, guid: 1ae6fe4527240084cbd9362ab7a50410, type: 3}
   gameplayPrefab: {fileID: 2051388820030852996, guid: f0cd994b39b7cac4c9f30842838f5272, type: 3}
