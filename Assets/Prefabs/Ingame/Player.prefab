@@ -38721,7 +38721,7 @@ GameObject:
   - component: {fileID: 1112300710216485732}
   - component: {fileID: 1977069496346480421}
   - component: {fileID: 6700142158013872403}
-  - component: {fileID: 5418733878035879459}
+  - component: {fileID: 7492319646168469439}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -38788,6 +38788,11 @@ MonoBehaviour:
   _tiredAcceleration: 15
   _maxVelocity: 10
   tiredLife: 0
+  indicator: {fileID: 0}
+  audidRun: {fileID: 0}
+  audidWalk: {fileID: 0}
+  walkMap1: {fileID: 0}
+  walkMap2: {fileID: 0}
   _rotationSpeed: 5000
   _cam: {fileID: 0}
 --- !u!114 &5688230875707542546
@@ -38894,7 +38899,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.19
   m_Center: {x: -0.04, y: 0.9, z: -0.62}
---- !u!114 &5418733878035879459
+--- !u!114 &7492319646168469439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

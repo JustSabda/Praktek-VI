@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Just a crappy character controller for the video
@@ -39,7 +40,12 @@ public class PlayerController : NetworkBehaviour
     private Vector3 _input;
     private Rigidbody _rb;
 
+    [SerializeField] private GameObject indicator;
 
+    [SerializeField] private AudioSource audidRun;
+    [SerializeField] private AudioSource audidWalk;
+
+    [SerializeField] private AudioClip walkMap1, walkMap2;
    
 
     private void Awake()
@@ -49,12 +55,25 @@ public class PlayerController : NetworkBehaviour
        
         corner = GetComponent<BoxCollider>();
         anim = GetComponentInChildren<Animator>();
+        //audidRun = GetComponent<AudioSource>();
 
-        
+        indicator.SetActive(false);
 
         charging = false;
         tiredLife = false;
-       
+
+
+        audidWalk.enabled = false;
+        audidRun.enabled = false;
+
+        if (SceneManager.GetActiveScene().name == ("Main"))
+        {
+            audidWalk.clip = walkMap1;
+        }
+        if (SceneManager.GetActiveScene().name == ("Main1"))
+        {
+            audidWalk.clip = walkMap2;
+        }
 
     }
 
@@ -81,12 +100,14 @@ public class PlayerController : NetworkBehaviour
         if (meeple == null)
         {
             hadEgg = false;
+            indicator.SetActive(true);
             tiredLife = true;
             //corner.enabled = false;
         }
         else
         {
             hadEgg = true;
+            indicator.SetActive(false);
             //corner.enabled = true;
 
         }
@@ -136,10 +157,12 @@ public class PlayerController : NetworkBehaviour
         if(_input.normalized != new Vector3(0,0,0))
         {
             anim.SetBool("Jalan", true);
+            audidWalk.enabled = true;
         }
         else
         {
             anim.SetBool("Jalan", false);
+            audidWalk.enabled = false;
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && !tiredLife)
@@ -147,8 +170,9 @@ public class PlayerController : NetworkBehaviour
             _rb.AddForce(transform.forward * dashPower, ForceMode.Impulse);
 
             //animation dash
+            anim.SetBool("Dash", true);
             Timer += Time.deltaTime;
-
+            audidRun.enabled = true;
             if (Timer >= delayCharging)
             {
                 Timer = 0f;
@@ -156,6 +180,11 @@ public class PlayerController : NetworkBehaviour
 
                 egg.curPowerEgg--;
             }
+        }
+        else
+        {
+            anim.SetBool("Dash", false);
+            audidRun.enabled = false;
         }
     }
 

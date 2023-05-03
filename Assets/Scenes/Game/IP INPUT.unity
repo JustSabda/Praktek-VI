@@ -1623,6 +1623,10 @@ PrefabInstance:
       value: ServerManager
       objectReference: {fileID: 0}
     - target: {fileID: 8950656886617044265, guid: fb4c12f82b356ac4784c451366cdd2b0, type: 3}
+      propertyPath: map
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950656886617044265, guid: fb4c12f82b356ac4784c451366cdd2b0, type: 3}
       propertyPath: gameplaySceneName
       value: Main
       objectReference: {fileID: 0}

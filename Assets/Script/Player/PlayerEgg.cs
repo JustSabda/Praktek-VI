@@ -34,14 +34,18 @@ public class PlayerEgg : NetworkBehaviour
     public float curPowerEgg;
     public float maxpowerEgg;
 
+    [SerializeField] private AudioSource eggGone;
 
     private bool x;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         capsule = GetComponent<MeshCollider>();
+
         rb.isKinematic = true;
         //powerText.text = curPowerEgg.ToString();
+        eggGone = GetComponent<AudioSource>();
+        eggGone.enabled = false;
 
     }
 
@@ -124,7 +128,7 @@ public class PlayerEgg : NetworkBehaviour
         _state = state.GONE;
         //done = true;
         capsule.isTrigger = false;
-
+        eggGone.enabled = true;
 
     }
     public void backParent(Transform parent)
@@ -154,7 +158,7 @@ public class PlayerEgg : NetworkBehaviour
             if (collision.gameObject.tag == "Player" && x == true) //_state == state.PICKUP)
             {
                 this.gameObject.transform.SetParent(collision.transform, false);
-
+                eggGone.enabled = false;
                 EggTimeServerRpc();
                 EggTime();
 
