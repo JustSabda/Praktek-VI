@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 4
   displayName: Geril si Yawan
   icon: {fileID: 21300000, guid: 13081eaa962cee04a83d75a349a4329a, type: 3}
-  introPrefab: {fileID: 1503185379374636055, guid: ae86c555e6bc60c40ada6c571cfcf1cc, type: 3}
-  gameplayPrefab: {fileID: 5358723342540490762, guid: 4f75e3867ec5102499ef8d2e5b8ebf9d, type: 3}
+  introPrefab: {fileID: 4824936424039144345, guid: 33fc0c60c00e5ac44bb069046ecdad44, type: 3}
+  gameplayPrefab: {fileID: 2051388820030852996, guid: ae86c555e6bc60c40ada6c571cfcf1cc, type: 3}
