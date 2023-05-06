@@ -19367,8 +19367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9689d36ae8496344693bddd5c1481017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spotPrefab: {fileID: 2732664913039939581, guid: 0b0eeec7e7e3d0b49bb8f379f2ae9cdd, type: 3}
-  _spotDistance: 0.5
+  _spotPrefab: {fileID: 2974293272589943911, guid: 3096d195af6b888449988abc991cc5fd, type: 3}
+  _spotDistance: 1
   _spotFadeTime: 1
   _groundOffset: 1
 --- !u!136 &6009712341371300221
