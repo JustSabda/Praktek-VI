@@ -8,6 +8,7 @@ TagManager:
   - Egg
   - Dead Wall
   - Charge Zone
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Post
-  - 
-  - 
+  - Enviroment
+  - Ground
   - 
   - 
   - 
