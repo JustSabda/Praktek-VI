@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class XXThirdPersonCam : MonoBehaviour
 {
+    public static XXThirdPersonCam Instance { get; private set; }
+
     [Header("References")]
     public Transform orientation;
     public Transform player;
-    public Transform playerObj;
-    public Rigidbody rb;
+    //public Transform playerObj;
+    //public Rigidbody rb;
 
     public float rotationSpeed;
 
@@ -17,6 +19,8 @@ public class XXThirdPersonCam : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -28,6 +32,8 @@ public class XXThirdPersonCam : MonoBehaviour
         Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
         orientation.forward = dirToCombatLookAt.normalized;
 
-        playerObj.forward = dirToCombatLookAt.normalized;
+        player.forward = dirToCombatLookAt.normalized;
+
+        //playerObj.forward = dirToCombatLookAt.normalized;
     }
 }

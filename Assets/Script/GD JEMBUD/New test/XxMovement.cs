@@ -4,10 +4,14 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
+using Unity.Netcode;
+using UnityEngine.InputSystem;
 
-public class XxMovement : MonoBehaviour
+public class XxMovement : NetworkBehaviour
 {
-    
+
+    public Transform aim;
+
     [Header("Movement")]
     public float moveSpeed;
 
@@ -27,11 +31,14 @@ public class XxMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    
+
     //TOP DONT CHANGE
 
     public static XxMovement Instance { get; private set; }
+
     [Header("Movement")]
-    [SerializeField] private float _curAcceleration = 2.0f;
+    //[SerializeField] private float _curAcceleration = 2.0f;
     [SerializeField] private float _normalAcceleration = 30;
     [SerializeField] private float _tiredAcceleration = 20;
     [SerializeField] public bool tiredLife;
@@ -60,11 +67,12 @@ public class XxMovement : MonoBehaviour
     [SerializeField] private GameObject indicator;
 
     [Header("Audio")]
-    //[SerializeField] private AudioSource audidRun;
-    //[SerializeField] private AudioSource audidWalk;
+    [SerializeField] private AudioSource audidRun;
+    [SerializeField] private AudioSource audidWalk;
 
     [SerializeField] private AudioClip walkMap1, walkMap2;
 
+    private bool holdAim;
 
     private void Awake()
     {
@@ -73,48 +81,75 @@ public class XxMovement : MonoBehaviour
 
     private void Start()
     {
+        if (IsOwner)
+        {
+            //AimCamera.Instance.playerInput = GetComponent<PlayerInput>();
+
+            
+
+            //Camera
+            XXThirdPersonCam.Instance.orientation = orientation.transform;
+            XXThirdPersonCam.Instance.player = this.transform;
+            //XXThirdPersonCam.Instance.rb = rb;
+            XXThirdPersonCam.Instance.combatLookAt = aim;
+
+        }
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         charging = false;
         tiredLife = false;
 
+        anim = GetComponentInChildren<Animator>();
+        indicator.SetActive(false);
+
+        audidWalk.enabled = false;
+        audidRun.enabled = false;
+
         if (SceneManager.GetActiveScene().name == ("Main"))
         {
-            //audidWalk.clip = walkMap1;
+            audidWalk.clip = walkMap1;
         }
         if (SceneManager.GetActiveScene().name == ("Main1"))
         {
-            //audidWalk.clip = walkMap2;
+            audidWalk.clip = walkMap2;
         }
     }
 
     private void Update()
     {
         //Network
-        /*
         if (IsOwner)
         {
             //Debug.Log(CameraFollow.Instance);
             CameraFollow.Instance.player = this.transform;
+            CameraFollow.Instance.aimPlayer = aim.transform;
+
+            AimCamera.Instance.isAim = holdAim;
         }
 
-
-        */
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            holdAim = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            holdAim = false;
+        }
 
         meeple = transform.Find("GO_Char_Telur_Basic_001");
 
         if (meeple == null)
         {
             hadEgg = false;
-            //indicator.SetActive(true);
+            indicator.SetActive(true);
             tiredLife = true;
             //corner.enabled = false;
         }
         else
         {
             hadEgg = true;
-            //indicator.SetActive(false);
+            indicator.SetActive(false);
             //corner.enabled = true;
 
         }
@@ -134,11 +169,11 @@ public class XxMovement : MonoBehaviour
 
         if (!tiredLife)
         {
-            _curAcceleration = _normalAcceleration;
+            moveSpeed = _normalAcceleration;
         }
         else
         {
-            _curAcceleration = _tiredAcceleration;
+            moveSpeed = _tiredAcceleration;
         }
 
         //ground check IMPORTANT CHANGE
@@ -174,15 +209,15 @@ public class XxMovement : MonoBehaviour
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        if (verticalInput == 0 && horizontalInput == 0)
+        if (verticalInput != 0 || horizontalInput != 0)
         {
-            //anim.SetBool("Jalan", true);
-            //audidWalk.enabled = true;
+            anim.SetBool("Jalan", true);
+            audidWalk.enabled = true;
         }
         else
         {
-            //anim.SetBool("Jalan", false);
-            //audidWalk.enabled = false;
+            anim.SetBool("Jalan", false);
+            audidWalk.enabled = false;
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && !tiredLife)
@@ -190,9 +225,9 @@ public class XxMovement : MonoBehaviour
             rb.AddForce(transform.forward * dashPower, ForceMode.Impulse);
 
             //animation dash
-            //anim.SetBool("Dash", true);
+            anim.SetBool("Dash", true);
             Timer += Time.deltaTime;
-            //audidRun.enabled = true;
+            audidRun.enabled = true;
             if (Timer >= delayCharging)
             {
                 Timer = 0f;
@@ -203,8 +238,8 @@ public class XxMovement : MonoBehaviour
         }
         else
         {
-            //anim.SetBool("Dash", false);
-            //audidRun.enabled = false;
+            anim.SetBool("Dash", false);
+            audidRun.enabled = false;
         }
     }
 

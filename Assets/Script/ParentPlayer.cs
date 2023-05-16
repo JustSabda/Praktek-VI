@@ -14,6 +14,10 @@ public class ParentPlayer : NetworkBehaviour
 
     [SerializeField] private float positionRange = 5f;
 
+    [SerializeField] private GameObject FxDead;
+
+    private bool isCreated = false;
+
     private void Awake()
     {
         Destroyed = false;
@@ -72,6 +76,12 @@ public class ParentPlayer : NetworkBehaviour
 
     private void MeledukReal ()
     {
+        if (!isCreated)
+        {
+            Instantiate(FxDead, player.transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+            isCreated = true;
+        }
+        
         player.SetActive(false);
         egg.SetActive(false);
     }

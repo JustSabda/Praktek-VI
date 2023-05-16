@@ -4,7 +4,7 @@ using System.Globalization;
 using Unity.Netcode;
 using UnityEngine;
 
-public class XxShoot : MonoBehaviour
+public class XxShoot : NetworkBehaviour
 {
     [SerializeField] private Projectile _projectile;
     [SerializeField] private AudioClip _spawnClip;
@@ -60,6 +60,7 @@ public class XxShoot : MonoBehaviour
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         //Transform hitTransform = null;
+
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
             debugTransform.position = raycastHit.point;
@@ -69,8 +70,6 @@ public class XxShoot : MonoBehaviour
 
         if (Input.GetMouseButton(0) && _lastFired + _curCooldown < Time.time)
         {
-
-
 
             _lastFired = Time.time;
 
@@ -90,9 +89,9 @@ public class XxShoot : MonoBehaviour
             }
 
 
-            //RequestFireServerRpc(dir);
+            RequestFireServerRpc(dir);
             ExecuteShoot(dir);
-            //StartCoroutine(ToggleLagIndicator());
+            StartCoroutine(ToggleLagIndicator());
         }
     }
 
@@ -105,7 +104,7 @@ public class XxShoot : MonoBehaviour
     [ClientRpc]
     private void FireClientRpc(Vector3 dir)
     {
-        //if (!IsOwner) ExecuteShoot(dir);
+        if (!IsOwner) ExecuteShoot(dir);
     }
 
     private void ExecuteShoot(Vector3 dir)

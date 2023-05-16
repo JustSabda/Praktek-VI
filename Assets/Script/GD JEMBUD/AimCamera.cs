@@ -6,22 +6,31 @@ using UnityEngine.InputSystem;
 
 public class AimCamera : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInput playerInput;
-    [SerializeField]
-    private int priorityBoostAmount = 10;
+    public static AimCamera Instance { get; private set; }
+
+    //[SerializeField]
+    //public PlayerInput playerInput;
     [SerializeField]
     private Canvas thirdPersonCanvas;
     [SerializeField]
     private Canvas aimCanvas;
 
+    public bool isAim;
+
 
     private CinemachineFreeLook virtualCamera;
-    private InputAction aimAction;
+    //private InputAction aimAction;
 
     private void Awake()
     {
+        Instance = this;
         virtualCamera = GetComponent<CinemachineFreeLook>();
+        //StartCoroutine(lagindicator());
+    }
+    /*
+    IEnumerator lagindicator()
+    {
+        yield return new WaitForSeconds(1f);
         aimAction = playerInput.actions["Aim"];
     }
 
@@ -36,17 +45,30 @@ public class AimCamera : MonoBehaviour
         aimAction.performed -= _ => StartAim();
         aimAction.canceled -= _ => CancelAim();
     }
+    */
+
+    private void Update()
+    {
+        if (isAim)
+        {
+            StartAim();
+        }
+        else
+        {
+            CancelAim();
+        }
+    }
 
     private void StartAim()
     {
-        virtualCamera.Priority += priorityBoostAmount;
+        virtualCamera.Priority = 20;
         aimCanvas.enabled = true;
         thirdPersonCanvas.enabled = false;
     }
 
     private void CancelAim()
     {
-        virtualCamera.Priority -= priorityBoostAmount;
+        virtualCamera.Priority = 9;
         aimCanvas.enabled = false;
         thirdPersonCanvas.enabled = true;
     }
