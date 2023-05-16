@@ -8449,6 +8449,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4273767905027224285, guid: 09067ddf6fedbc34fb242d4a0034a153, type: 3}
+      propertyPath: LaunchForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5049975554590600583, guid: 09067ddf6fedbc34fb242d4a0034a153, type: 3}
       propertyPath: m_Enabled
       value: 1
