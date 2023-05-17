@@ -6,6 +6,7 @@ public class EMPZone : MonoBehaviour
 {
     public bool deadZone;
     MeshRenderer skin;
+    [SerializeField] private GameObject Tai;
 
     private void Awake()
     {
@@ -19,10 +20,12 @@ public class EMPZone : MonoBehaviour
         if (deadZone)
         {
             skin.enabled = true;
+            Tai.SetActive (true);
         }
         else
         {
             skin.enabled = false;
+            Tai.SetActive(false);
         }
     }
 

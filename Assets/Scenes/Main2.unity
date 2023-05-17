@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3f698c5d47507d54db2dcb930054532e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1108,8 +1108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215177176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6276, y: -5.14, z: -4.9933}
-  m_LocalScale: {x: 10.599915, y: 5.6669, z: 6.751094}
+  m_LocalPosition: {x: 0.6276, y: -8.4, z: 3.4}
+  m_LocalScale: {x: 20, y: 9.72217, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1480,8 +1480,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918744339}
-  m_LocalRotation: {x: 0.0029664598, y: 0.12307436, z: -0.00036789337, w: 0.99239296}
-  m_LocalPosition: {x: -0.0029900996, y: 2.4, z: -4.999999}
+  m_LocalRotation: {x: 0.0029664584, y: 0.12307437, z: -0.0003678936, w: 0.992393}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1539,6 +1539,7 @@ MonoBehaviour:
   offset: {x: 0, y: 12.01, z: 0}
   smoothTime: 0.5
   x: 0
+  done: 0
   cine1: {fileID: 2035120946}
   cine2: {fileID: 2035120945}
 --- !u!114 &1918744343
@@ -1704,8 +1705,8 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
+    m_Style: 6
+    m_Time: 0.4
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2341,5 +2342,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 365b413f9fc6aef4dbade262c6d255a7, type: 2}
+    - target: {fileID: 6166674261227808758, guid: b1f801ee916215a4ebec0d7f0d5aaea5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f801ee916215a4ebec0d7f0d5aaea5, type: 3}

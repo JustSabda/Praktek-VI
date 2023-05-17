@@ -85,8 +85,6 @@ public class XxMovement : NetworkBehaviour
         {
             //AimCamera.Instance.playerInput = GetComponent<PlayerInput>();
 
-            
-
             //Camera
             XXThirdPersonCam.Instance.orientation = orientation.transform;
             XXThirdPersonCam.Instance.player = this.transform;
@@ -181,7 +179,7 @@ public class XxMovement : NetworkBehaviour
 
         MyInput();
         SpeedControl();
-
+        /*
         if (grounded)
         {
             rb.drag = groundDrag;
@@ -190,6 +188,7 @@ public class XxMovement : NetworkBehaviour
         {
             rb.drag = 0;
         }
+        */
     }
 
     private void FixedUpdate()

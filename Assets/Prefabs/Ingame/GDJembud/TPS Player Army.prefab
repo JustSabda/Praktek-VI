@@ -40594,8 +40594,8 @@ Transform:
   m_GameObject: {fileID: 6309616124947649515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 3.333333, y: 3.333333, z: 3.333333}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.1414, y: 2.1414, z: 2.1414}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3423646973743736640}
   - {fileID: 2775802966374256694}
@@ -47581,7 +47581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155cc8cb2fe151146857351fdeeabbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 495065817004038777, guid: aa7089c8a26cf294891f579f5d14fcc2, type: 3}
+  _projectile: {fileID: 1623912771826755069, guid: dea443f97b64c1146a35c68844d5884d, type: 3}
   _spawnClip: {fileID: 8300000, guid: 65581109c24740a4e9ea998cadd820b1, type: 3}
   _projectileSpeed: 700
   _curCooldown: 0.5

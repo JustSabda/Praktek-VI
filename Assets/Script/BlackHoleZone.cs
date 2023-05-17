@@ -8,6 +8,7 @@ public class BlackHoleZone : MonoBehaviour
     public bool blackHole;
     MeshRenderer skin;
     CGF cGF;
+    [SerializeField] GameObject Sedot;
     
 
     private void Awake()
@@ -24,10 +25,12 @@ public class BlackHoleZone : MonoBehaviour
         if (cGF.enabled == true)
         {
             skin.enabled = true;
+            Sedot.SetActive(true);
         }
         else
         {
             skin.enabled = false;
+            Sedot.SetActive(false);
         }
     }
 

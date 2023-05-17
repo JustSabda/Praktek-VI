@@ -22,7 +22,7 @@ public class CharacterSpawner : NetworkBehaviour
             if (character != null)
             {
                 Debug.Log(client.Value.clientId);
-                var spawnPos = new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+                var spawnPos = new Vector3(Random.Range(-3f, 3f), 3f, Random.Range(-3f, 3f));
                 var characterInstance = Instantiate(character.GameplayPrefab, spawnPos, Quaternion.identity);
                 characterInstance.SpawnAsPlayerObject(client.Value.clientId);
                 
