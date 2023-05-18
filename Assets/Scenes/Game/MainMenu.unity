@@ -736,7 +736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ff0e1742e63d44bbbb438d1831fe7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next: IP INPUT
 --- !u!1 &773733766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2447298741825589423, guid: 7687d275881f133478bb67b53b8ffce8, type: 3}

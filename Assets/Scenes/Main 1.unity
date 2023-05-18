@@ -2020,7 +2020,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -2579,7 +2579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107512527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.1227, y: -5.0974, z: 0.3919}
+  m_LocalPosition: {x: 9.1227, y: -3.28, z: 0.3919}
   m_LocalScale: {x: 18.339817, y: 1.7007284, z: 20.9714}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8444,6 +8444,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3512013421976368263, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 17.709118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512013421976368263, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.82
+      objectReference: {fileID: 0}
     - target: {fileID: 4949599681785649556, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
       propertyPath: Sedot
       value: 
@@ -8494,6 +8502,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166674259727911847, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694289353287854382, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8538378448047171760, guid: 26dede6002955914bb5a5b36bfa4d09f, type: 3}
