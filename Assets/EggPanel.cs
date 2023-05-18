@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EggPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static EggPanel Instance { get; private set; }
+
+    public GameObject egg;
+    public GameObject eggless;
     void Start()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
 }

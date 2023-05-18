@@ -56,13 +56,9 @@ public class PlayerShooting : NetworkBehaviour
         if (Input.GetMouseButton(0) && _lastFired + _curCooldown < Time.time)
         {
             
-            
 
             _lastFired = Time.time;
             var dir = transform.forward;
-
-
-            
 
 
             if (GetComponent<PlayerController>().hadEgg == true)

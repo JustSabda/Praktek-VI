@@ -155,6 +155,8 @@ public class XxMovement : NetworkBehaviour
             hadEgg = false;
             
             indicator.SetActive(true);
+            EggPanel.Instance.egg.SetActive(false);
+            EggPanel.Instance.eggless.SetActive(true);
             tiredLife = true;
             //corner.enabled = false;
         }
@@ -164,6 +166,9 @@ public class XxMovement : NetworkBehaviour
 
             indicator.SetActive(false);
             //corner.enabled = true;
+
+            EggPanel.Instance.egg.SetActive(true);
+            EggPanel.Instance.eggless.SetActive(false);
 
         }
 
