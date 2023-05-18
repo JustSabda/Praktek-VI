@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
-    [HideInInspector]public bool x = true;
+    public bool x = true;
 
 
     private void Awake()
@@ -28,13 +28,22 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        x = true;
+
+        //x = true;
+        //Debug.Log("wow");
+
+
+
+
+
 
     }
 
+    
     private void Start()
     {
-        PlayMusic("Music 1");
+        PlayMusic("Main Menu");
+        
     }
 
     public void PlayMusic(string name)
@@ -48,6 +57,7 @@ public class AudioManager : MonoBehaviour
 
         else
         {
+            musicSource.Stop();
             musicSource.clip = s.clip;
             musicSource.Play();
         }

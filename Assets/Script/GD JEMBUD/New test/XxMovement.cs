@@ -72,6 +72,8 @@ public class XxMovement : NetworkBehaviour
 
     [SerializeField] private AudioClip walkMap1, walkMap2;
 
+    private AudioListener listener;
+
     private bool holdAim;
 
     private void Awake()
@@ -79,21 +81,21 @@ public class XxMovement : NetworkBehaviour
         Instance = this;
     }
 
+
+
     private void Start()
     {
         if (IsOwner)
         {
             //AimCamera.Instance.playerInput = GetComponent<PlayerInput>();
 
-            //Camera
-            XXThirdPersonCam.Instance.orientation = orientation.transform;
-            XXThirdPersonCam.Instance.player = this.transform;
-            //XXThirdPersonCam.Instance.rb = rb;
-            XXThirdPersonCam.Instance.combatLookAt = aim;
+
 
         }
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        listener = GetComponent<AudioListener>();
+
+        
 
         charging = false;
         tiredLife = false;
@@ -119,6 +121,16 @@ public class XxMovement : NetworkBehaviour
         //Network
         if (IsOwner)
         {
+            //Camera
+            XXThirdPersonCam.Instance.orientation = orientation.transform;
+            XXThirdPersonCam.Instance.player = this.transform;
+
+            //XXThirdPersonCam.Instance.rb = rb;
+            XXThirdPersonCam.Instance.combatLookAt = aim;
+
+            listener.enabled = true;
+
+
             //Debug.Log(CameraFollow.Instance);
             CameraFollow.Instance.player = this.transform;
             CameraFollow.Instance.aimPlayer = aim.transform;
@@ -136,10 +148,12 @@ public class XxMovement : NetworkBehaviour
         }
 
         meeple = transform.Find("GO_Char_Telur_Basic_001");
+        rb.freezeRotation = true;
 
         if (meeple == null)
         {
             hadEgg = false;
+            
             indicator.SetActive(true);
             tiredLife = true;
             //corner.enabled = false;
@@ -147,6 +161,7 @@ public class XxMovement : NetworkBehaviour
         else
         {
             hadEgg = true;
+
             indicator.SetActive(false);
             //corner.enabled = true;
 

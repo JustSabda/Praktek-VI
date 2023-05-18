@@ -12,7 +12,7 @@ public class ParentPlayer : NetworkBehaviour
 
     //[SerializeField] private PlayerEgg _egg;
 
-    [SerializeField] private float positionRange = 5f;
+    //[SerializeField] private float positionRange = 5f;
 
     [SerializeField] private GameObject FxDead;
 
@@ -78,7 +78,7 @@ public class ParentPlayer : NetworkBehaviour
     {
         if (!isCreated)
         {
-            Instantiate(FxDead, player.transform.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+            Instantiate(FxDead, player.transform.position + new Vector3(0, -0.765f,0), Quaternion.Euler(new Vector3(-90, 0, 0)));
             isCreated = true;
         }
         

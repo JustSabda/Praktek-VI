@@ -25122,7 +25122,6 @@ MonoBehaviour:
   Destroyed: 0
   player: {fileID: 7280354708546329241}
   egg: {fileID: 191927470706298963}
-  positionRange: 5
   FxDead: {fileID: 5640458461067481217, guid: 81f551dbef7b45340a3fef7e8f76dced, type: 3}
 --- !u!114 &7959378404804107069
 MonoBehaviour:
@@ -25296,7 +25295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 1623912771826755069, guid: e239ba64cbd80cb40b147fbe3d647157, type: 3}
-  _spawnClip: {fileID: 0}
+  _spawnClip: {fileID: 8300000, guid: 65581109c24740a4e9ea998cadd820b1, type: 3}
   _projectileSpeed: 700
   _curCooldown: 0.5
   _cooldownNormal: 0.5
@@ -25382,7 +25381,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280354708546329241}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &7280354709229694336
 GameObject:
   m_ObjectHideFlags: 0
