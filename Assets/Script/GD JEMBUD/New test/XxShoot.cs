@@ -33,6 +33,8 @@ public class XxShoot : NetworkBehaviour
 
     private void Update()
     {
+        if (!IsOwner) return;
+
         var Egg = GetComponentInChildren<PlayerEgg>();
 
         var player = GetComponent<XxMovement>();

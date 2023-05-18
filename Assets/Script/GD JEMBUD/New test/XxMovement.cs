@@ -76,6 +76,8 @@ public class XxMovement : NetworkBehaviour
 
     private bool holdAim;
 
+    private bool X = false;
+
     private void Awake()
     {
         Instance = this;
@@ -122,7 +124,6 @@ public class XxMovement : NetworkBehaviour
         if (IsOwner)
         {
             //Camera
-            XXThirdPersonCam.Instance.orientation = orientation.transform;
             XXThirdPersonCam.Instance.player = this.transform;
 
             //XXThirdPersonCam.Instance.rb = rb;
@@ -136,6 +137,15 @@ public class XxMovement : NetworkBehaviour
             CameraFollow.Instance.aimPlayer = aim.transform;
 
             AimCamera.Instance.isAim = holdAim;
+
+            X = true;
+
+            
+        }
+
+        if(X == true)
+        {
+            XXThirdPersonCam.Instance.orientation = orientation.transform;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -155,8 +165,13 @@ public class XxMovement : NetworkBehaviour
             hadEgg = false;
             
             indicator.SetActive(true);
-            EggPanel.Instance.egg.SetActive(false);
-            EggPanel.Instance.eggless.SetActive(true);
+
+            if (X == true)
+            {
+                EggPanel.Instance.egg.SetActive(false);
+                EggPanel.Instance.eggless.SetActive(true);
+            }
+
             tiredLife = true;
             //corner.enabled = false;
         }
@@ -166,9 +181,12 @@ public class XxMovement : NetworkBehaviour
 
             indicator.SetActive(false);
             //corner.enabled = true;
-
-            EggPanel.Instance.egg.SetActive(true);
-            EggPanel.Instance.eggless.SetActive(false);
+            if (X == true)
+            {
+                EggPanel.Instance.egg.SetActive(true);
+                EggPanel.Instance.eggless.SetActive(false);
+            }
+            
 
         }
 
@@ -213,7 +231,11 @@ public class XxMovement : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (IsOwner)
+        {
+            MovePlayer();
+        }
+        
     }
 
     private void MyInput()
