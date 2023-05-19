@@ -18620,6 +18620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5589745872287009906}
   - component: {fileID: 1530974246635828786}
+  - component: {fileID: 1503740360396754364}
   m_Layer: 0
   m_Name: SK_CH_Chicken1_Armor3
   m_TagString: Untagged
@@ -18665,6 +18666,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1503740360396754364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105134664313460424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8deae8091111f4eb30a56c1f4e0d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 1530974246635828786}
 --- !u!1 &5113670318472744635
 GameObject:
   m_ObjectHideFlags: 0
@@ -25158,8 +25173,6 @@ GameObject:
   - component: {fileID: 1853784094246867759}
   - component: {fileID: 3782494156561279413}
   - component: {fileID: 8452184422256294222}
-  - component: {fileID: 2975733984188207937}
-  - component: {fileID: 1485480917426171372}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -25384,40 +25397,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280354708546329241}
   m_Enabled: 0
---- !u!95 &2975733984188207937
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280354708546329241}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1485480917426171372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280354708546329241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TransitionStateInfoList: []
-  m_Animator: {fileID: 1530974246635828786}
 --- !u!1 &7280354709229694336
 GameObject:
   m_ObjectHideFlags: 0

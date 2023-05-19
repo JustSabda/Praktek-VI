@@ -119,6 +119,7 @@ public class XxShoot : NetworkBehaviour
 
         var projectile = Instantiate(_projectile, _spawner.position, Quaternion.LookRotation(dir, Vector3.up));
         projectile.Init(dir * _projectileSpeed);
+        AudioSource.PlayClipAtPoint(_spawnClip, transform.position);
 
         if (shootBack)
         {

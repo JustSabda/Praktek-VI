@@ -47,6 +47,13 @@ public class Projectile : MonoBehaviour {
             if (rb == null) continue;
 
             rb.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+
+            var player = obj.GetComponent<XxMovement>();
+
+            if (player == null) continue;
+
+            player.Petok();
+            
         }
 
         var speed = lastvelocity.magnitude;

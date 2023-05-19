@@ -912,6 +912,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d856a7bb9446ab4c96f8b49b85ac60e, type: 3}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[2].name
+      value: Petok 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 79910d91532947f43a1625b814263474, type: 3}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[3].name
+      value: Petok 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e351b3b194f7f5449bda6cc632f28586, type: 3}
+    - target: {fileID: 6929894631103689671, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
+      propertyPath: sfxSounds.Array.data[4].name
+      value: Petok 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6929894631103689672, guid: 6b8ef9e3742956a4383a2bbe279da763, type: 3}
       propertyPath: m_RootOrder
       value: 11

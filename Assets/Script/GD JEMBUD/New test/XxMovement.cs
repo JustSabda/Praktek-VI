@@ -284,6 +284,20 @@ public class XxMovement : NetworkBehaviour
         }
     }
 
+    public void Petok()
+    {
+        float petok = Random.Range(0, 2);
+
+        if (petok == 0)
+            AudioManager.Instance.PlaySFX("Petok 1");
+
+        if (petok == 1)
+            AudioManager.Instance.PlaySFX("Petok 2");
+
+        if (petok == 2)
+            AudioManager.Instance.PlaySFX("Petok 3");
+    }
+
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

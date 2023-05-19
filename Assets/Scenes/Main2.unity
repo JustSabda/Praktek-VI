@@ -999,6 +999,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 644a66ba784cffd45884f7ee8c44029d, type: 3}
   - name: Ball Destroy
     clip: {fileID: 8300000, guid: 7b1b25037a073e54fae1d54d6f9e1d5f, type: 3}
+  - name: Petok 1
+    clip: {fileID: 8300000, guid: 2d856a7bb9446ab4c96f8b49b85ac60e, type: 3}
+  - name: Petok 2
+    clip: {fileID: 8300000, guid: 79910d91532947f43a1625b814263474, type: 3}
+  - name: Petok 3
+    clip: {fileID: 8300000, guid: e351b3b194f7f5449bda6cc632f28586, type: 3}
   musicSource: {fileID: 78301141}
   sfxSource: {fileID: 2016924093}
   x: 1
